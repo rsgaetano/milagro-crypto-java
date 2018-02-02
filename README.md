@@ -70,6 +70,7 @@ repository.
 
 ## Contributions
 
-Contributions are very welcome. Please make pull requests to the developement branch. You can run this command to build and test the code.
+Contributions are very welcome. Please make pull requests to the develop 
+branch. You can run this command to build and test the code.
 
     ./gradlew build
