@@ -1,4 +1,4 @@
-# Milagro Crypto Java Library
+# MCJL - *Milagro Crypto Java Library*
 
 [![Master Branch](https://img.shields.io/badge/-master:-gray.svg)](https://github.com/milagro-crypto/milagro-crypto-java/tree/master)
 [![Master Build Status](https://secure.travis-ci.org/milagro-crypto/milagro-crypto-java.png?branch=master)](https://travis-ci.org/milagro-crypto/milagro-crypto-java?branch=master)
@@ -18,26 +18,58 @@
 
 ## Description
 
-*Milagro Crypto Java Library*
+*MCJL - Milagro Crypto Java Library*
 
-Milagro Crypto Java Library is a standards compliant cryptographic library with no external dependencies. 
-For a detailed explanation about this library please read: [AMCL.pdf](AMCL.pdf)
+* MCJL is a standards compliant JavaScript cryptographic library with no external dependencies except for the random seed source.
 
-This library is created by copying the Java code from the [ACML](https://github.com/milagro-crypto/amcl/tree/master/version3/java) 
-project. The config64.py script has been run in this directory to select all the curves and RSA security level and the output
-Java files are used in this project. If you require a smaller Jar file please follow the instructions in the AMCL project.
- 
-NOTE: This product includes software developed at *[The Apache Software Foundation](http://www.apache.org/)*.
+* MCJL is a refactor of the *Java* code of [AMCL](https://github.com/milagro-crypto/amcl). For a detailed explanation about this library please read: [AMCL.pdf](AMCL.pdf). 
+
+* MCJL supports the standards for RSA, ECDH, ECIES, ECDSA and M-PIN, AES-GCM encryption/decryption, SHA256, SHA384, SHA512 and SHA3 hash functions and a cryptographically secure random number generator. Furthermore we recently added New Hope, a post-quantum key exchange.
+
+This library is created from the Java code in this directory 
+[ACML](https://github.com/milagro-crypto/amcl/tree/master/version3/java) 
+project. The config64.py script has been run in this AMCL directory and all 
+the curves and RSA security level were selected for a 64-bit build; the output
+Java files from this process are used in this project. If you require a 
+smaller JAR file please follow the instructions in the AMCL project.
 
 ## Software Dependencies
 
 In order to build this library, the following packages are required:
 
 * [gradle](https://gradle.org/)
-* [Docker](https://www.docker.com)
 
-## Build Instructions
+## Setup
 
+Replace `VERSION` below with required version.
+
+To use `MCJL` with Maven project, use:
+```
+<dependency>
+  <groupId>org.miracl.milagro.amcl</groupId>
+  <artifactId>MCJL</artifactId>
+  <version>VERSION</version>
+</dependency>
+```
+
+For Gradle project:
+```
+dependencies {
+    compile 'org.miracl.milagro.amcl:MCJL:VERSION'
+}
+```
+
+`MCJL` needs Java 8.
+
+## Local Installation
+
+Use this command to compile library and install it as artifact to local Maven 
+repository.
+
+    ./gradlew clean build publishToMavenLocal --stacktrace --info
 
 ## Contributions
 
+Contributions are very welcome. Please make pull requests to the developement branch. You can run this command to build and test the code.
+
+    ./gradlew build
