@@ -10,7 +10,7 @@ apply plugin: 'maven-publish'
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId 'MCJL'
+            artifactId 'milagro-crypto-java'
             groupId 'org.miracl.milagro.amcl'
             version '0.1.0'
             from components.java
